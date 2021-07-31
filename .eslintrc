@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "plugins": ["prettier", "react-hooks", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "requireConfigFile": false
+  },
+  "settings": {
+      "react": {
+          "version": "detect"
+      }
+  },
+  "env": {
+      "browser": true,
+      "amd": true,
+      "node": true
+  },
+  "extends": [
+    "next",
+    "eslint:recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "rules": {
+      "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+      "react/jsx-props-no-spreading": "off"
+  }
+}
