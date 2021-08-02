@@ -3,6 +3,8 @@ import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
+import '../public/fonts/stylesheet.css';
+import '../src/index.scss';
 
 const MatterApplication: React.FC<AppProps> = (props: AppProps) => {
   const { Component, pageProps } = props;
