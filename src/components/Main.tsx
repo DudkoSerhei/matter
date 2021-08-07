@@ -7,7 +7,7 @@ interface Props {
 
 const useStyles = makeStyles({
   main: {
-    minWidth: '80%',
+    width: '80%',
     margin: '0 auto',
     display: 'inherit',
     flexDirection: 'inherit',
