@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { makeStyles } from '@material-ui/core';
 
 interface Props {
@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Main: React.FC = (props: Props) => {
+const Main: FunctionComponent<Props> = (props: Props) => {
   const { children } = props;
   const classes = useStyles();
 

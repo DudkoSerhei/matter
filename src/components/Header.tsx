@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { makeStyles, Button, IconButton } from '@material-ui/core';
 import Main from './Main';
 import Logo from './Logo';
@@ -57,7 +57,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Header: React.FC = () => {
+const Header: FunctionComponent = () => {
   const classes = useStyles();
 
   return (

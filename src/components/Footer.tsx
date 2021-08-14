@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, FunctionComponent } from 'react';
 import { makeStyles, Link } from '@material-ui/core';
 import Main from './Main';
 import { Button, Input } from '../ui-kit';
@@ -104,7 +104,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Footer: React.FC = () => {
+const Footer: FunctionComponent = () => {
   const classes = useStyles();
   const [email, setEmail] = useState('');
 

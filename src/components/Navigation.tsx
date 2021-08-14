@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 
@@ -43,7 +43,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Navigation: React.FC = () => {
+const Navigation: FunctionComponent = () => {
   const classes = useStyles();
 
   return (

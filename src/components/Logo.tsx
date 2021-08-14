@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
 import { makeStyles } from '@material-ui/core';
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Logo: React.FC<Props> = (props: Props) => {
+const Logo: FunctionComponent<Props> = (props: Props) => {
   const classes = useStyles();
   const { className } = props;
 

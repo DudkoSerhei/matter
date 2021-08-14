@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler, FunctionComponent } from 'react';
 import cn from 'classnames';
 import { makeStyles, Button as Btn } from '@material-ui/core';
 
@@ -41,7 +41,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Button: React.FC<Props> = (props: Props) => {
+const Button: FunctionComponent<Props> = (props: Props) => {
   const { children, variant, onClick, className } = props;
   const classes = useStyles();
 

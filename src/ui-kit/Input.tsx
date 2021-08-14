@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, FunctionComponent } from 'react';
 import cn from 'classnames';
 import { makeStyles, TextField } from '@material-ui/core';
 
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Input: React.FC<Props> = (props: Props) => {
+const Input: FunctionComponent<Props> = (props: Props) => {
   const { value, onChange, placeholder, className } = props;
   const classes = useStyles();
 
