@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import Link from 'next/link';
 import { makeStyles } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 
@@ -49,28 +50,36 @@ const Navigation: FunctionComponent = () => {
   return (
     <nav className={classes.nav}>
       <li className={classes.item}>
-        <button className={classes.button} type="button">
-          <span>shop</span>
-          <ExpandMore className={classes.icon} />
-        </button>
+        <Link href="/shop" passHref>
+          <button className={classes.button} type="button">
+            <span>shop</span>
+            <ExpandMore className={classes.icon} />
+          </button>
+        </Link>
       </li>
       <li className={classes.item}>
-        <button className={classes.button} type="button">
-          <span>fabric</span>
-          <ExpandMore className={classes.icon} />
-        </button>
+        <Link href="/fabric" passHref>
+          <button className={classes.button} type="button">
+            <span>fabric</span>
+            <ExpandMore className={classes.icon} />
+          </button>
+        </Link>
       </li>
       <li className={classes.item}>
-        <button className={classes.button} type="button">
-          <span>journal</span>
-          <ExpandMore className={classes.icon} />
-        </button>
+        <Link href="/journal" passHref>
+          <button className={classes.button} type="button">
+            <span>journal</span>
+            <ExpandMore className={classes.icon} />
+          </button>
+        </Link>
       </li>
       <li className={classes.item}>
-        <button className={classes.button} type="button">
-          <span>about</span>
-          <ExpandMore className={classes.icon} />
-        </button>
+        <Link href="/about" passHref>
+          <button className={classes.button} type="button">
+            <span>about</span>
+            <ExpandMore className={classes.icon} />
+          </button>
+        </Link>
       </li>
     </nav>
   );
