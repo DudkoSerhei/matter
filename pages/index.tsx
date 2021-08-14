@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { makeStyles } from '@material-ui/core';
 import Layout from '../src/components/Layout';
+import Banner from '../src/components/Banner';
 
 const useStyles = makeStyles({
   banner: {
@@ -14,6 +15,7 @@ const Home: FunctionComponent = () => {
 
   return (
     <Layout>
+      <Banner />
       <div className={classes.banner}>Home</div>
     </Layout>
   );
