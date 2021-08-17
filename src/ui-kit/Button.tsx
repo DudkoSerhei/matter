@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     textTransform: 'uppercase',
     border: '1px solid',
     borderRadius: 0,
-    transition: '0.3s color ease',
+    transition: '0.3s all ease',
   },
   white: {
     backgroundColor: '#fff',

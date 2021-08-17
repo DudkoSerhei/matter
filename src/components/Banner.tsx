@@ -5,6 +5,9 @@ import { makeStyles, Link } from '@material-ui/core';
 import { Arrow } from '../icons';
 
 const useStyles = makeStyles({
+  slider: {
+    height: '600px',
+  },
   container: {
     position: 'relative',
     height: '600px',
@@ -90,6 +93,7 @@ const Banner: FunctionComponent = () => {
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    className: classes.slider,
   };
 
   return (
