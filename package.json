@@ -21,6 +21,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "next": "latest",
     "next-compose-plugins": "^2.2.1",
+    "next-optimized-images": "^2.6.2",
     "prettier-eslint": "^13.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

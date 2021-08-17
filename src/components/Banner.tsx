@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import Slider from 'react-slick';
-import Image from 'next/image';
 import { makeStyles, Link } from '@material-ui/core';
 import { Arrow } from '../icons';
 
@@ -105,11 +104,7 @@ const Banner: FunctionComponent = () => {
             Shop now
           </Link>
         </div>
-        <Image
-          layout="fill"
-          src="/images/first-banner.png"
-          alt="Fashion style"
-        />
+        <img src="./images/first-banner.png" alt="Fashion style" />
       </div>
       <div className={classes.container}>
         <div className={classes.description}>
@@ -118,11 +113,7 @@ const Banner: FunctionComponent = () => {
             Shop now
           </Link>
         </div>
-        <Image
-          layout="fill"
-          src="/images/second-banner.png"
-          alt="Casual style"
-        />
+        <img src="./images/second-banner.png" alt="Casual style" />
       </div>
     </Slider>
   );

@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
 import { makeStyles } from '@material-ui/core';
-import { Image, Button } from '../ui-kit';
+import { Button } from '../ui-kit';
 import { Product } from '../interfaces';
 
 interface Props {
@@ -92,11 +92,7 @@ const ProductCard: FunctionComponent<Props> = (props: Props) => {
     <Link href="/" passHref>
       <div className={cn(className, classes.card)}>
         {product.new && <span className={classes.new}>NEW</span>}
-        <Image
-          className={classes.image}
-          src={product.image}
-          alt={product.name}
-        />
+        <img className={classes.image} src={product.image} alt={product.name} />
         <h3 className={classes.name}>{product.name}</h3>
         <p className={classes.price}>{`$${product.price.toFixed(2)}`}</p>
         <Button className={classes.button} variant="black">
