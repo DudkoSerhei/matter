@@ -1,11 +1,16 @@
 import React, { FunctionComponent } from 'react';
 import { makeStyles } from '@material-ui/core';
-import Layout from '../src/components/Layout';
-import Banner from '../src/components/Banner';
-import Main from '../src/components/Main';
-import ProductCard from '../src/components/ProductCard';
-import About from '../src/components/About';
-import { products } from '../src/constants';
+import {
+  Layout,
+  Banner,
+  Main,
+  ProductCard,
+  About,
+  Article,
+  SmArticle,
+} from '../src/components';
+import { Button } from '../src/ui-kit';
+import { products, articles } from '../src/constants';
 
 const useStyles = makeStyles({
   products: {
@@ -34,6 +39,19 @@ const useStyles = makeStyles({
     padding: '62px 0',
     backgroundColor: '#fff',
   },
+  explore: {
+    display: 'grid',
+    padding: '62px 0',
+  },
+  article: {
+    width: '49%',
+  },
+  smArticle: {
+    width: '48%',
+  },
+  button: {
+    margin: '30px auto 0',
+  },
 });
 
 const Home: FunctionComponent = () => {
@@ -59,6 +77,26 @@ const Home: FunctionComponent = () => {
       <div className={classes.about}>
         <Main>
           <About />
+        </Main>
+      </div>
+      <div className={classes.explore}>
+        <Main>
+          <h2 className={classes.title}>Explore</h2>
+          <div className={classes.wrapper}>
+            <Article className={classes.article} article={articles[0]} />
+            <div className={classes.wrapper} style={{ width: '49%' }}>
+              {articles.slice(1, 5).map((article) => (
+                <SmArticle
+                  key={article.id}
+                  className={classes.smArticle}
+                  article={article}
+                />
+              ))}
+            </div>
+          </div>
+          <Button className={classes.button} variant="black">
+            See the journal
+          </Button>
         </Main>
       </div>
     </Layout>
