@@ -9,3 +9,4 @@ export { default as Main } from './Main';
 export { default as Navigation } from './Navigation';
 export { default as ProductCard } from './ProductCard';
 export { default as SmArticle } from './SmArticle';
+export { default as ShopCard } from './ShopCard';

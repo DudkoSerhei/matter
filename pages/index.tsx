@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { makeStyles } from '@material-ui/core';
+import { useRouter } from 'next/router';
 import {
   Layout,
   Banner,
@@ -8,9 +9,10 @@ import {
   About,
   Article,
   SmArticle,
+  ShopCard,
 } from '../src/components';
 import { Button } from '../src/ui-kit';
-import { products, articles } from '../src/constants';
+import { products, articles, ROUTES, categories } from '../src/constants';
 
 const useStyles = makeStyles({
   products: {
@@ -52,10 +54,19 @@ const useStyles = makeStyles({
   button: {
     margin: '30px auto 0',
   },
+  shop: {
+    padding: '62px 0',
+    backgroundColor: '#fff',
+  },
 });
 
 const Home: FunctionComponent = () => {
   const classes = useStyles();
+  const router = useRouter();
+
+  const goToJournal = () => {
+    router.push(ROUTES.JOURNAL);
+  };
 
   return (
     <Layout>
@@ -94,9 +105,27 @@ const Home: FunctionComponent = () => {
               ))}
             </div>
           </div>
-          <Button className={classes.button} variant="black">
+          <Button
+            className={classes.button}
+            variant="black"
+            onClick={goToJournal}
+          >
             See the journal
           </Button>
+        </Main>
+      </div>
+      <div className={classes.shop}>
+        <Main>
+          <h2 className={classes.title}>Shop</h2>
+          <div className={classes.wrapper}>
+            {categories.map((category) => (
+              <ShopCard
+                key={category.id}
+                className={classes.card}
+                category={category}
+              />
+            ))}
+          </div>
         </Main>
       </div>
     </Layout>
