@@ -4,7 +4,8 @@ import Layout from '../src/components/Layout';
 import Banner from '../src/components/Banner';
 import Main from '../src/components/Main';
 import ProductCard from '../src/components/ProductCard';
-import products from '../src/constants/products';
+import About from '../src/components/About';
+import { products } from '../src/constants';
 
 const useStyles = makeStyles({
   products: {
@@ -29,6 +30,10 @@ const useStyles = makeStyles({
       marginTop: 0,
     },
   },
+  about: {
+    padding: '62px 0',
+    backgroundColor: '#fff',
+  },
 });
 
 const Home: FunctionComponent = () => {
@@ -49,6 +54,11 @@ const Home: FunctionComponent = () => {
               />
             ))}
           </div>
+        </Main>
+      </div>
+      <div className={classes.about}>
+        <Main>
+          <About />
         </Main>
       </div>
     </Layout>

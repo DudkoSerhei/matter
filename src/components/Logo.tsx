@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
 import { makeStyles } from '@material-ui/core';
+import { ROUTES } from '../constants';
 
 interface Props {
   className?: string;
@@ -27,7 +28,7 @@ const Logo: FunctionComponent<Props> = (props: Props) => {
   const { className } = props;
 
   return (
-    <Link href="/">
+    <Link href={ROUTES.ROOT}>
       <a className={cn(classes.logo, className)}>matter</a>
     </Link>
   );

@@ -158,21 +158,29 @@ const Footer: FunctionComponent = () => {
             </div>
             <ul className={classes.socials}>
               <li className={classes.socItem}>
-                <Link className={classes.link} href="/" target="_blank">
+                <Link
+                  className={classes.link}
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                >
                   <Facebook className={classes.icon} />
                 </Link>
               </li>
               <li className={classes.socItem}>
-                <Link className={classes.link} href="/" target="_blank">
+                <Link
+                  className={classes.link}
+                  href="https://twitter.com/"
+                  target="_blank"
+                >
                   <Twitter className={classes.icon} />
                 </Link>
               </li>
             </ul>
           </form>
         </div>
-        <p
-          className={classes.description}
-        >{`© Copyright Matter PTE LTD ${new Date().getFullYear()}`}</p>
+        <p className={classes.description}>
+          {`© Copyright Matter PTE LTD ${new Date().getFullYear()}`}
+        </p>
       </Main>
     </footer>
   );

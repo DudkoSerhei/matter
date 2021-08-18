@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 import { makeStyles } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
+import { ROUTES } from '../constants';
 
 const useStyles = makeStyles({
   nav: {
@@ -50,7 +51,7 @@ const Navigation: FunctionComponent = () => {
   return (
     <nav className={classes.nav}>
       <li className={classes.item}>
-        <Link href="/shop" passHref>
+        <Link href={ROUTES.SHOP} passHref>
           <button className={classes.button} type="button">
             <span>shop</span>
             <ExpandMore className={classes.icon} />
@@ -58,7 +59,7 @@ const Navigation: FunctionComponent = () => {
         </Link>
       </li>
       <li className={classes.item}>
-        <Link href="/fabric" passHref>
+        <Link href={ROUTES.FABRIC} passHref>
           <button className={classes.button} type="button">
             <span>fabric</span>
             <ExpandMore className={classes.icon} />
@@ -66,7 +67,7 @@ const Navigation: FunctionComponent = () => {
         </Link>
       </li>
       <li className={classes.item}>
-        <Link href="/journal" passHref>
+        <Link href={ROUTES.JOURNAL} passHref>
           <button className={classes.button} type="button">
             <span>journal</span>
             <ExpandMore className={classes.icon} />
@@ -74,7 +75,7 @@ const Navigation: FunctionComponent = () => {
         </Link>
       </li>
       <li className={classes.item}>
-        <Link href="/about" passHref>
+        <Link href={ROUTES.ABOUT} passHref>
           <button className={classes.button} type="button">
             <span>about</span>
             <ExpandMore className={classes.icon} />

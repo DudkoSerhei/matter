@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import Slider from 'react-slick';
 import { makeStyles, Link } from '@material-ui/core';
 import { Arrow } from '../icons';
+import { ROUTES } from '../constants';
 
 const useStyles = makeStyles({
   slider: {
@@ -100,20 +101,26 @@ const Banner: FunctionComponent = () => {
       <div className={classes.container}>
         <div className={classes.description}>
           <h1 className={classes.title}>Perfume Tips Tricks</h1>
-          <Link href="/shop" className={classes.btn}>
+          <Link href={ROUTES.SHOP} className={classes.btn}>
             Shop now
           </Link>
         </div>
-        <img src="./images/first-banner.png" alt="Fashion style" />
+        <img
+          src={require('../../public/images/first-banner.png')} // eslint-disable-line global-require
+          alt="Fashion style"
+        />
       </div>
       <div className={classes.container}>
         <div className={classes.description}>
           <h1 className={classes.title}>Perfume Tips Tricks</h1>
-          <Link href="/shop" className={classes.btn}>
+          <Link href={ROUTES.SHOP} className={classes.btn}>
             Shop now
           </Link>
         </div>
-        <img src="./images/second-banner.png" alt="Casual style" />
+        <img
+          src={require('../../public/images/second-banner.png')} // eslint-disable-line global-require
+          alt="Casual style"
+        />
       </div>
     </Slider>
   );

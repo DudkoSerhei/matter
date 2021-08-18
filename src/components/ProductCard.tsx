@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import cn from 'classnames';
-import Link from 'next/link';
 import { makeStyles } from '@material-ui/core';
 import { Button } from '../ui-kit';
 import { Product } from '../interfaces';
@@ -28,7 +27,6 @@ const useStyles = makeStyles({
       '& $button': {
         visibility: 'visible',
         top: '38%',
-        left: '57px',
         transition: '0.3s all ease',
       },
       '& $label': {
@@ -72,8 +70,8 @@ const useStyles = makeStyles({
   button: {
     visibility: 'hidden',
     position: 'absolute',
-    top: '10px',
-    left: '15px',
+    top: '20%',
+    left: '57px',
     zIndex: 1,
     padding: '12px 30px',
     transition: '0s all ease',
@@ -89,17 +87,15 @@ const ProductCard: FunctionComponent<Props> = (props: Props) => {
   const classes = useStyles();
 
   return (
-    <Link href="/" passHref>
-      <div className={cn(className, classes.card)}>
-        {product.new && <span className={classes.new}>NEW</span>}
-        <img className={classes.image} src={product.image} alt={product.name} />
-        <h3 className={classes.name}>{product.name}</h3>
-        <p className={classes.price}>{`$${product.price.toFixed(2)}`}</p>
-        <Button className={classes.button} variant="black">
-          <span className={classes.label}>QUICK VIEW</span>
-        </Button>
-      </div>
-    </Link>
+    <div className={cn(className, classes.card)}>
+      {product.new && <span className={classes.new}>NEW</span>}
+      <img className={classes.image} src={product.image} alt={product.name} />
+      <h3 className={classes.name}>{product.name}</h3>
+      <p className={classes.price}>{`$${product.price.toFixed(2)}`}</p>
+      <Button className={classes.button} variant="black">
+        <span className={classes.label}>QUICK VIEW</span>
+      </Button>
+    </div>
   );
 };
 
