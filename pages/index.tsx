@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Link } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import {
   Layout,
@@ -12,7 +12,13 @@ import {
   ShopCard,
 } from '../src/components';
 import { Button } from '../src/ui-kit';
-import { products, articles, ROUTES, categories } from '../src/constants';
+import {
+  products,
+  articles,
+  ROUTES,
+  categories,
+  brands,
+} from '../src/constants';
 
 const useStyles = makeStyles({
   products: {
@@ -57,6 +63,27 @@ const useStyles = makeStyles({
   shop: {
     padding: '62px 0',
     backgroundColor: '#fff',
+  },
+  brands: {
+    padding: '62px 0',
+    backgroundColor: '#fff',
+  },
+  brandWrapper: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    padding: '0 10%',
+  },
+  link: {
+    '&:hover': {
+      '& $brand': {
+        filter: 'drop-shadow(2px 1px 0px #3CB371)',
+      },
+    },
+  },
+  brand: {
+    height: '25px',
+    filter: 'contrast(0.2)',
   },
 });
 
@@ -124,6 +151,27 @@ const Home: FunctionComponent = () => {
                 className={classes.card}
                 category={category}
               />
+            ))}
+          </div>
+        </Main>
+      </div>
+      <div className={classes.brands}>
+        <Main>
+          <h2 className={classes.title}>As Seen On</h2>
+          <div className={classes.brandWrapper}>
+            {brands.map((brand) => (
+              <Link
+                key={brand.id}
+                href={brand.url}
+                className={classes.link}
+                target="_blank"
+              >
+                <img
+                  className={classes.brand}
+                  src={brand.image}
+                  alt={brand.name}
+                />
+              </Link>
             ))}
           </div>
         </Main>
