@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { makeStyles, Link } from '@material-ui/core';
+import { makeStyles, Link, IconButton } from '@material-ui/core';
 import { useRouter } from 'next/router';
+import ReactPlayer from 'react-player';
 import {
   Layout,
   Banner,
@@ -11,6 +12,7 @@ import {
   SmArticle,
   ShopCard,
 } from '../src/components';
+import { Play } from '../src/icons';
 import { Button } from '../src/ui-kit';
 import {
   products,
@@ -18,6 +20,7 @@ import {
   ROUTES,
   categories,
   brands,
+  videos,
 } from '../src/constants';
 
 const useStyles = makeStyles({
@@ -77,13 +80,47 @@ const useStyles = makeStyles({
   link: {
     '&:hover': {
       '& $brand': {
-        filter: 'drop-shadow(2px 1px 0px #3CB371)',
+        filter: 'drop-shadow(2px 1px 0px #ff6008)',
       },
     },
   },
   brand: {
     height: '25px',
     filter: 'contrast(0.2)',
+  },
+  videoItem: {
+    width: '31%',
+    '& .react-player__preview': {
+      backgroundSize: 'auto !important',
+    },
+    '& div': {
+      transition: '0.3s all ease',
+    },
+    '&:hover': {
+      '& div': {
+        boxShadow: '#33333a 0px 5px 15px',
+      },
+      '& $playIcon': {
+        color: '#33333a',
+      },
+      '& $videoName': {
+        transform: 'scale(1.05)',
+      },
+    },
+  },
+  videoName: {
+    fontSize: '16px',
+    fontWeight: 400,
+    lineHeight: '1.56',
+    padding: '25px 0 0 20px',
+    transition: '0.3s all ease',
+  },
+  playIcon: {
+    width: '75px',
+    height: '75px',
+    color: '#fff',
+    filter: 'drop-shadow(2px 4px 6px black)',
+    transition: '0.3s all ease',
   },
 });
 
@@ -153,6 +190,34 @@ const Home: FunctionComponent = () => {
               />
             ))}
           </div>
+        </Main>
+      </div>
+      <div className={classes.explore}>
+        <Main>
+          <h2 className={classes.title}>Recommended Videos</h2>
+          <div className={classes.wrapper}>
+            {videos.map((video) => (
+              <div key={video.id} className={classes.videoItem}>
+                <ReactPlayer
+                  playing
+                  controls
+                  width="100%"
+                  height="260px"
+                  light
+                  url={video.url}
+                  playIcon={
+                    <IconButton>
+                      <Play className={classes.playIcon} />
+                    </IconButton>
+                  }
+                />
+                <h3 className={classes.videoName}>{video.name}</h3>
+              </div>
+            ))}
+          </div>
+          <Button className={classes.button} variant="black">
+            Show More
+          </Button>
         </Main>
       </div>
       <div className={classes.brands}>

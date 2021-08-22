@@ -19,7 +19,10 @@ const useStyles = makeStyles({
     transition: '0.3s all ease',
     '&:hover': {
       transform: 'scale(1.05)',
-      filter: 'drop-shadow(2px 4px 6px black)',
+      borderColor: '#ff6008',
+      '& $title': {
+        filter: 'drop-shadow(2px 4px 6px #ff6008)',
+      },
     },
   },
   label: {
